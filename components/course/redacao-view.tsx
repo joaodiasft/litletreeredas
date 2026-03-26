@@ -12,7 +12,7 @@ import {
   Sparkles,
   Trophy,
   Users,
-  Video,
+  CheckCircle2,
 } from "lucide-react";
 import {
   Accordion,
@@ -28,10 +28,10 @@ import {
 } from "./shell";
 
 const stats = [
-  { label: "50+ aulas gravadas", icon: Video },
-  { label: "12k alunos impactados", icon: Users },
-  { label: "98% de aprovação", icon: Trophy },
-  { label: "24/7 suporte total", icon: MessageCircle },
+  { label: "900+ em notas de destaque", icon: Trophy },
+  { label: "2 mil alunos impactados", icon: Users },
+  { label: "90% de aprovação", icon: CheckCircle2 },
+  { label: "Suporte humanizado e acompanhamento de verdade", icon: MessageCircle },
 ] as const;
 
 export function RedacaoView() {
@@ -41,15 +41,23 @@ export function RedacaoView() {
 
       <section className="mb-10">
         <span className="mb-3 inline-block rounded-full bg-brand-roseSoft px-3 py-1 font-manrope text-[10px] font-bold uppercase tracking-wider text-brand-pink">
-          Método exclusivo
+          Matrículas Abertas
         </span>
         <h1 className="font-heading mb-3 text-[25px] font-bold leading-tight text-brand-premium">
-          O caminho irreversível para a{" "}
-          <span className="text-brand-pink">Nota 1000.</span>
+          O caminho certo para a{" "}
+          <span className="text-brand-pink">Nota 1000 na redação do ENEM</span>
         </h1>
         <p className="mb-6 text-sm leading-relaxed text-brand-muted">
-          Tudo o que você precisa para dominar a redação do ENEM: técnica, repertório
-          e gestão de tempo com acompanhamento próximo.
+          No Curso de Redação Nota Mil, você aprende tudo o que precisa para
+          dominar a redação do ENEM: estrutura, argumentação, repertório
+          sociocultural, técnicas de escrita e gestão do tempo, com
+          acompanhamento próximo e suporte humanizado em todas as etapas da sua
+          preparação.
+        </p>
+        <p className="mb-6 text-sm leading-relaxed text-brand-muted">
+          Aqui, você é orientado da introdução à conclusão, com foco em evolução
+          real, prática constante e correções que mostram exatamente como
+          melhorar.
         </p>
         <GradientCtaButton href="#matricula-red">Quero entrar agora</GradientCtaButton>
         <a
@@ -72,7 +80,9 @@ export function RedacaoView() {
         </div>
       </section>
 
-      <section className="mb-10 grid grid-cols-2 gap-3">
+      <section className="mb-10">
+        <SectionLineTitle>Nossos resultados</SectionLineTitle>
+        <div className="grid grid-cols-2 gap-3">
         {stats.map((s) => (
           <motion.div
             key={s.label}
@@ -85,26 +95,37 @@ export function RedacaoView() {
             </p>
           </motion.div>
         ))}
+        </div>
       </section>
 
       <section className="mb-10">
         <SectionLineTitle>A ciência por trás da escrita</SectionLineTitle>
         <p className="mb-6 text-sm text-brand-muted">
-          Método validado em anos de correções e resultados reais.
+          Nosso método foi construído com base em anos de experiência, correções
+          detalhadas e resultados reais. Cada aula é planejada para desenvolver
+          as competências exigidas pelo ENEM, ajudando o aluno a escrever com
+          mais segurança, clareza e estratégia.
         </p>
+        <h3 className="font-heading mb-4 text-lg text-brand-premium">
+          Por que escolher o Curso de Redação Nota Mil?
+        </h3>
         <div className="space-y-3">
           {[
             {
               t: "Comece do zero",
-              d: "Base conceitual clara antes de avançar para temas complexos.",
+              d: "Mesmo que você tenha dificuldade para escrever, nosso método oferece uma base clara e organizada para compreender cada parte da redação antes de avançar para temas mais complexos.",
             },
             {
               t: "Repertório coringa",
-              d: "Banco de autores e filósofos com aplicação guiada.",
+              d: "Você terá acesso a um banco de autores, filósofos, filmes, dados e referências estratégicas, com orientação sobre como usar cada repertório de forma produtiva na redação.",
             },
             {
               t: "Escrita estruturada",
-              d: "Modelos de parágrafo e conectores para ganhar fluidez.",
+              d: "Você aprende a montar introdução, desenvolvimento e conclusão com técnica, além de dominar conectivos, argumentação e construção de parágrafos para ganhar fluidez e segurança.",
+            },
+            {
+              t: "Correção que ensina",
+              d: "Mais do que corrigir, mostramos onde você errou, por que errou e como melhorar, para que sua evolução seja contínua e perceptível.",
             },
           ].map((item) => (
             <div
@@ -128,27 +149,37 @@ export function RedacaoView() {
           Currículo de elite
         </h2>
         <p className="mb-6 text-sm text-brand-muted">
-          Abra cada etapa para ver a explicação do módulo.
+          Conheça as etapas da nossa preparação.
         </p>
         <Accordion defaultValue={[]} multiple={false} className="space-y-2">
           {[
-            "01. A base da aprovação",
-            "02. Hipertrofia de repertório",
-            "03. Finalização de alto nível",
-          ].map((label, idx) => (
+            {
+              label: "01. A base da aprovação",
+              content:
+                "Neste módulo, o aluno aprende os fundamentos essenciais da redação do ENEM: estrutura do texto dissertativo-argumentativo, introdução, tese e antecipação argumentativa, desenvolvimento com argumentos consistentes, conclusão com proposta de intervenção completa e competências avaliadas pelo ENEM.",
+            },
+            {
+              label: "02. Hipertrofia de repertório",
+              content:
+                "Neste módulo, o foco está no fortalecimento do repertório sociocultural e da argumentação. O aluno aprende a utilizar autores e obras de forma estratégica, selecionar repertórios pertinentes, ampliar visão crítica e relacionar repertório e argumento com naturalidade.",
+            },
+            {
+              label: "03. Finalização de alto nível",
+              content:
+                "Aqui o aluno aperfeiçoa a escrita para alcançar alto desempenho: refinamento argumentativo, aprofundamento crítico, uso eficiente do tempo de prova, treino com temas variados e revisão estratégica para reduzir erros e potencializar a nota.",
+            },
+          ].map((item, idx) => (
             <AccordionItem
-              key={label}
+              key={item.label}
               value={`red-${idx}`}
               className="rounded-[22px] border border-brand-line bg-white px-4 shadow-card"
             >
               <AccordionTrigger className="font-manrope text-sm font-semibold text-brand-premium hover:no-underline">
-                {label}
+                {item.label}
               </AccordionTrigger>
               <AccordionContent>
                 <p className="text-sm leading-relaxed text-brand-muted">
-                  Neste módulo você desenvolve competências específicas, com correções
-                  comentadas e metas semanais. Ideal para quem busca evolução
-                  mensurável até a prova.
+                  {item.content}
                 </p>
               </AccordionContent>
             </AccordionItem>
@@ -156,16 +187,29 @@ export function RedacaoView() {
         </Accordion>
       </section>
 
+      <section className="mb-10 rounded-[24px] border border-brand-line bg-white p-4 shadow-card">
+        <h3 className="font-heading mb-2 text-xl text-brand-premium">Como funciona o curso</h3>
+        <p className="text-sm leading-relaxed text-brand-muted">
+          Nosso curso é organizado por módulos. Cada módulo é composto por 4
+          aulas, com duração de 1h30 cada.
+        </p>
+        <p className="mt-3 text-sm leading-relaxed text-brand-muted">
+          Durante as aulas, o aluno produz redações e atividades direcionadas,
+          que são entregues para correção e acompanhamento. Assim, o aprendizado
+          acontece com prática constante, orientação individualizada e evolução real.
+        </p>
+      </section>
+
       <section className="mb-10 space-y-4">
         <SectionLineTitle>Vozes do sucesso</SectionLineTitle>
         {[
           {
-            q: "“A correção individualizada mudou minha forma de estruturar o texto.”",
+            q: "“A correção individualizada mudou a minha forma de estruturar a redação. Passei a escrever com muito mais segurança.”",
             n: "Maria Clara",
             tag: "Medicina",
           },
           {
-            q: "“Consegui nota máxima na primeira fase da Fuvest.”",
+            q: "“Com o método do curso, consegui desenvolver melhor meus argumentos e elevar muito o nível da minha escrita.”",
             n: "Lucas",
             tag: "Engenharia",
           },
@@ -198,17 +242,22 @@ export function RedacaoView() {
             {
               icon: Sparkles,
               t: "Simulados espelho",
-              d: "Provas no estilo ENEM com tempo e cartão-resposta.",
+              d: "Treinos no estilo ENEM, com tempo cronometrado e formato semelhante ao da prova oficial.",
             },
             {
               icon: Flame,
               t: "Revisão aquecida",
-              d: "Checklist na véspera para evitar erros comuns.",
+              d: "Checklist estratégico e revisão orientada para evitar erros comuns e chegar mais preparado no dia da prova.",
             },
             {
               icon: BookOpen,
               t: "Biblioteca de modelos",
-              d: "Redações nota 1000 comentadas linha a linha.",
+              d: "Acesso a redações bem estruturadas, modelos comentados e exemplos de textos de alto nível para servir de referência.",
+            },
+            {
+              icon: Users,
+              t: "Acompanhamento próximo",
+              d: "Orientação contínua para que o aluno saiba exatamente no que precisa melhorar em cada etapa.",
             },
           ].map((item) => (
             <li
@@ -234,18 +283,22 @@ export function RedacaoView() {
         className="mb-24 overflow-hidden rounded-[28px] bg-gradient-primary px-5 py-10 text-center text-white shadow-card-lg"
       >
         <h2 className="font-heading mb-2 text-xl font-bold">
-          Sua jornada rumo à excelência começa agora.
+          Curso de Redação Nota Mil
         </h2>
         <p className="mb-6 text-sm text-white/90">
-          Últimas vagas com condição especial para turma 2026.
+          Mais do que ensinar a escrever, nós preparamos você para conquistar
+          resultados reais.
         </p>
         <a
           href="mailto:contato@redacaonotamil.com.br"
           className="font-manrope inline-flex w-full items-center justify-center rounded-[26px] bg-white px-6 py-4 text-[15px] font-bold text-brand-pink shadow-card transition hover:bg-brand-roseSoft"
         >
-          Garantir minha vaga com desconto
+          Matrículas abertas - Quero minha vaga
         </a>
-        <p className="mt-4 text-[11px] text-white/85">Restam apenas 100 vagas em 2024</p>
+        <p className="mt-4 text-[11px] text-white/85">
+          Venha aprender com um método que une técnica, prática, estratégia e
+          acompanhamento de verdade.
+        </p>
       </section>
 
       <nav
