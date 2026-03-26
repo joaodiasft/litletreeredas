@@ -1,25 +1,13 @@
 "use client";
 
 import Link from "next/link";
-import { Mail, MapPin, Menu, MessageCircle, Phone, Send, User } from "lucide-react";
-import { CourseShell } from "@/components/course/shell";
+import { Mail, MapPin, MessageCircle, Phone, Send, User } from "lucide-react";
+import { CourseHeaderBack, CourseShell } from "@/components/course/shell";
 
 export default function ContatosPage() {
   return (
     <CourseShell>
-      <header className="mb-6 flex items-center justify-between pt-4">
-        <button
-          type="button"
-          className="flex h-10 w-10 items-center justify-center rounded-2xl text-brand-icon"
-          aria-label="Menu"
-        >
-          <Menu className="h-5 w-5" />
-        </button>
-        <Link href="/" className="font-heading text-sm font-bold text-brand-pink">
-          Redação Nota Mil
-        </Link>
-        <span className="h-8 w-8 rounded-full bg-brand-roseSoft" />
-      </header>
+      <CourseHeaderBack title="Redação Nota Mil" />
 
       <section className="mb-6">
         <p className="mb-2 text-[10px] font-semibold uppercase tracking-[0.16em] text-brand-muted">

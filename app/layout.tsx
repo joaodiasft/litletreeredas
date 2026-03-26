@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, Manrope, Outfit } from "next/font/google";
 import "./globals.css";
+import { FloatingWhatsapp } from "@/components/ui/floating-whatsapp";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -43,7 +44,10 @@ export default function RootLayout({
       lang="pt-BR"
       className={`${inter.variable} ${manrope.variable} ${heading.variable}`}
     >
-      <body className={`${inter.className} antialiased`}>{children}</body>
+      <body className={`${inter.className} antialiased`}>
+        {children}
+        <FloatingWhatsapp />
+      </body>
     </html>
   );
 }

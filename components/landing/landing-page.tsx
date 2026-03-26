@@ -214,23 +214,33 @@ export function LandingPage() {
             className="font-manrope flex w-full items-center justify-between gap-3 rounded-[26px] bg-gradient-primary px-4 py-4 text-white shadow-card-lg transition hover:brightness-105"
           >
             <span className="flex items-center gap-3">
-              <List className="h-5 w-5 shrink-0" strokeWidth={2.25} />
+              <motion.span
+                animate={{ rotate: [0, -8, 8, 0] }}
+                transition={{ duration: 1.8, repeat: Infinity, repeatDelay: 2.5 }}
+              >
+                <List className="h-5 w-5 shrink-0" strokeWidth={2.25} />
+              </motion.span>
               <span className="text-[16px] font-bold">Matrículas Abertas</span>
             </span>
             <ChevronRight className="h-5 w-5 shrink-0" strokeWidth={2.5} />
           </motion.a>
 
           <motion.a
-            href="/cursos/exatas"
+            href="/bolsa"
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
             className="font-manrope flex w-full items-center justify-between gap-3 rounded-[26px] border border-brand-line bg-white px-4 py-4 shadow-card transition hover:border-brand-roseLight"
           >
             <span className="flex min-w-0 items-center gap-3">
-              <Monitor
-                className="h-5 w-5 shrink-0 text-brand-pink"
-                strokeWidth={2.25}
-              />
+              <motion.span
+                animate={{ y: [0, -2, 0] }}
+                transition={{ duration: 1.6, repeat: Infinity, repeatDelay: 2 }}
+              >
+                <Monitor
+                  className="h-5 w-5 shrink-0 text-brand-pink"
+                  strokeWidth={2.25}
+                />
+              </motion.span>
               <span className="text-[15px] font-semibold leading-snug text-brand-premium">
                 Me qualificar para bolsa no curso
               </span>
@@ -375,27 +385,33 @@ export function LandingPage() {
           <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-brand-roseSoft text-brand-pink">
             <Home className="h-5 w-5" strokeWidth={2.25} aria-hidden />
           </span>
-          <button
+          <motion.button
             type="button"
             className="flex h-11 w-11 items-center justify-center rounded-2xl text-brand-icon transition-colors hover:bg-brand-roseSoft"
             aria-label="Cursos"
+            whileHover={{ y: -2 }}
+            whileTap={{ scale: 0.95 }}
           >
             <BookOpen className="h-5 w-5" strokeWidth={2} />
-          </button>
-          <button
+          </motion.button>
+          <motion.button
             type="button"
             className="flex h-11 w-11 items-center justify-center rounded-2xl text-brand-icon transition-colors hover:bg-brand-roseSoft"
             aria-label="Vídeos"
+            whileHover={{ y: -2 }}
+            whileTap={{ scale: 0.95 }}
           >
             <PlaySquare className="h-5 w-5" strokeWidth={2} />
-          </button>
-          <button
+          </motion.button>
+          <motion.button
             type="button"
             className="flex h-11 w-11 items-center justify-center rounded-2xl text-brand-icon transition-colors hover:bg-brand-roseSoft"
             aria-label="Contato"
+            whileHover={{ y: -2 }}
+            whileTap={{ scale: 0.95 }}
           >
             <Mail className="h-5 w-5" strokeWidth={2} />
-          </button>
+          </motion.button>
         </div>
       </nav>
     </div>
