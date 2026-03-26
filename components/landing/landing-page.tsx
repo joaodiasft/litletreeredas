@@ -73,24 +73,47 @@ type LinkRowProps = {
 };
 
 function LinkRow({ href, icon: Icon, label }: LinkRowProps) {
+  const isExternal = href.startsWith("http") || href.startsWith("mailto:");
+
   return (
     <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
-      <Link
-        href={href}
-        className="group flex w-full items-center gap-3 rounded-[26px] border border-brand-line bg-white px-3 py-3.5 shadow-card transition-shadow hover:shadow-card-lg"
-      >
-        <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-brand-roseSoft text-brand-pink">
-          <Icon className="h-5 w-5" strokeWidth={2.25} aria-hidden />
-        </span>
-        <span className="min-w-0 flex-1 text-left text-[15px] font-semibold leading-snug text-brand-premium">
-          {label}
-        </span>
-        <ChevronRight
-          className="h-5 w-5 shrink-0 text-brand-pink"
-          strokeWidth={2.25}
-          aria-hidden
-        />
-      </Link>
+      {isExternal ? (
+        <a
+          href={href}
+          target={href.startsWith("http") ? "_blank" : undefined}
+          rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
+          className="group flex w-full items-center gap-3 rounded-[26px] border border-brand-line bg-white px-3 py-3.5 shadow-card transition-shadow hover:shadow-card-lg"
+        >
+          <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-brand-roseSoft text-brand-pink">
+            <Icon className="h-5 w-5" strokeWidth={2.25} aria-hidden />
+          </span>
+          <span className="min-w-0 flex-1 text-left text-[15px] font-semibold leading-snug text-brand-premium">
+            {label}
+          </span>
+          <ChevronRight
+            className="h-5 w-5 shrink-0 text-brand-pink"
+            strokeWidth={2.25}
+            aria-hidden
+          />
+        </a>
+      ) : (
+        <Link
+          href={href}
+          className="group flex w-full items-center gap-3 rounded-[26px] border border-brand-line bg-white px-3 py-3.5 shadow-card transition-shadow hover:shadow-card-lg"
+        >
+          <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-brand-roseSoft text-brand-pink">
+            <Icon className="h-5 w-5" strokeWidth={2.25} aria-hidden />
+          </span>
+          <span className="min-w-0 flex-1 text-left text-[15px] font-semibold leading-snug text-brand-premium">
+            {label}
+          </span>
+          <ChevronRight
+            className="h-5 w-5 shrink-0 text-brand-pink"
+            strokeWidth={2.25}
+            aria-hidden
+          />
+        </Link>
+      )}
     </motion.div>
   );
 }
@@ -185,7 +208,7 @@ export function LandingPage() {
         {/* Primary CTAs */}
         <div className="mb-10 flex flex-col gap-3">
           <motion.a
-            href="#matriculas"
+            href="/cursos/redacao"
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
             className="font-manrope flex w-full items-center justify-between gap-3 rounded-[26px] bg-gradient-primary px-4 py-4 text-white shadow-card-lg transition hover:brightness-105"
@@ -198,7 +221,7 @@ export function LandingPage() {
           </motion.a>
 
           <motion.a
-            href="#bolsa"
+            href="/cursos/exatas"
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
             className="font-manrope flex w-full items-center justify-between gap-3 rounded-[26px] border border-brand-line bg-white px-4 py-4 shadow-card transition hover:border-brand-roseLight"
@@ -250,12 +273,12 @@ export function LandingPage() {
             <SectionLabel>Informações</SectionLabel>
             <div className="flex flex-col gap-2.5">
               <LinkRow
-                href="#turmas"
+                href="/turmas"
                 icon={Clock}
                 label="Turmas e Horários"
               />
               <LinkRow
-                href="#planos"
+                href="/planos"
                 icon={Wallet}
                 label="Planos e Valores"
               />
@@ -266,12 +289,12 @@ export function LandingPage() {
             <SectionLabel>Conquistas</SectionLabel>
             <div className="flex flex-col gap-2.5">
               <LinkRow
-                href="#resultados"
+                href="/cursos/redacao#curriculo"
                 icon={Trophy}
                 label="Resultados"
               />
               <LinkRow
-                href="#destaques"
+                href="/cursos/exatas"
                 icon={Star}
                 label="Destaques"
               />
@@ -282,12 +305,12 @@ export function LandingPage() {
             <SectionLabel>Onde estamos e fale conosco</SectionLabel>
             <div className="flex flex-col gap-2.5">
               <LinkRow
-                href="#local"
+                href="https://maps.google.com/?q=Reda%C3%A7%C3%A3o+Nota+Mil"
                 icon={MapPin}
                 label="Localização"
               />
               <LinkRow
-                href="#contatos"
+                href="mailto:contato@redacaonotamil.com.br"
                 icon={MessageSquare}
                 label="Nossos Contatos"
               />
