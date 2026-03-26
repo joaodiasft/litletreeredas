@@ -26,6 +26,22 @@ npm run build
 npm start
 ```
 
+## Deploy na Vercel
+
+Projeto no painel: [litletreeredas-w93p](https://vercel.com/naredacaonota1000-2663s-projects/litletreeredas-w93p) · URL: [litletreeredas-w93p.vercel.app](https://litletreeredas-w93p.vercel.app)
+
+1. **Conectar o GitHub:** no projeto Vercel → **Settings** → **Git** → **Connect Git Repository** → escolha `joaodiasft/litletreeredas`, branch **main**.
+2. **Root directory:** raiz do repositório (`.`).
+3. O arquivo `vercel.json` define `framework: "nextjs"` para a Vercel reconhecer o app como Next.js (o build continua sendo o padrão otimizado da plataforma).
+4. Cada `git push` na `main` dispara deploy de produção; PRs geram previews.
+
+Deploy manual (CLI), após `npx vercel login`:
+
+```bash
+npx vercel link --project litletreeredas-w93p --team naredacaonota1000-2663s-projects --yes
+npx vercel --prod
+```
+
 ## Paleta
 
 | Token        | Hex       |
